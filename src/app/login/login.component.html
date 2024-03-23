@@ -1,1 +1,25 @@
-<p>login works!</p>
+<div class="login">
+    <form (ngSubmit)="entrar()"  #loginForm="ngForm">
+       <div class="elemento-formulario">
+        <label for="emailUsuario">Entrar com email</label>
+        <input
+            type="email"
+            name="emailUsuario"
+            [(ngModel)]="login.emailUsuario"
+            #emailUsuario="ngModel">
+       </div> 
+       <div class="elemento-formulario">
+        <label for="senhaUsuario">Senha</label>
+        <input
+            type="senhaUsuario"
+            name="senhaUsuario"
+            [(ngModel)]="login.senha"
+            #senha="ngModel">
+       </div>
+       <div class="botoes-formulario">
+        <button class="cadastrar" type="button" [routerLink]="['/cadastro']">Cadastrar-me</button>
+        <button class="entrar" type="submit">Entrar</button>
+        <button class="esqueciAsenha" type="submit">Esqueci a senha</button>
+      </div> 
+    </form>
+</div>
