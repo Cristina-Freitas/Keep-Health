@@ -1,6 +1,7 @@
 <div class="login">
     <form (ngSubmit)="entrar()"  #loginForm="ngForm">
-       <div class="elemento-formulario">
+      <h2>Identificação de Usuário</h2> 
+      <div class="elemento-formulario">
         <label for="emailUsuario">Entrar com email</label>
         <input
             type="email"
@@ -11,7 +12,7 @@
        <div class="elemento-formulario">
         <label for="senhaUsuario">Senha</label>
         <input
-            type="senhaUsuario"
+            type="password"
             name="senhaUsuario"
             [(ngModel)]="login.senha"
             #senha="ngModel">
@@ -19,7 +20,7 @@
        <div class="botoes-formulario">
         <button class="cadastrar" type="button" [routerLink]="['/cadastro']">Cadastrar-me</button>
         <button class="entrar" type="submit">Entrar</button>
-        <button class="esqueciAsenha" type="submit">Esqueci a senha</button>
+        <button class="esqueciAsenha" type="button" (click)="esqueciAsenha()">Esqueci a senha</button>
       </div> 
     </form>
 </div>

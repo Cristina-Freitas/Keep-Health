@@ -1,1 +1,59 @@
-<p>cadastro works!</p>
+<div class="container">
+    <h1 class="titulo">Cadastro de Usuário</h1>
+<div class="cadastro">
+    <form (ngSubmit)="cadastrar()"  #CadastroForm="ngForm">
+       
+        <div class="elemento-formulario">
+            <label for="nome"></label>
+            <input
+                placeholder="Digite o seu nome!"
+                type="text"
+                name="nomeUsuario"
+                [(ngModel)]="cadastro.nomeUsuario"
+                #nomeUsuario="ngModel">
+           </div> 
+        
+        <div class="elemento-formulario">
+        <label for="email"></label>
+        <input
+            placeholder="Digite o seu email!"
+            type="email"
+            name="emailUsuario"
+            [(ngModel)]="cadastro.emailUsuario"
+            #emailUsuario="ngModel">
+       </div> 
+
+       <div class="elemento-formulario">
+        <label for="dataNascimento"></label>
+        <input
+            placeholder="Digite a sua Data de nascimento"
+            type="text"
+            name="dataNascimentoUsuario"
+            [(ngModel)]="cadastro.dataNascimentoUsuario"
+            #dataNascimentoUsuario="ngModel">
+       </div> 
+       
+       <div class="elemento-formulario">
+        <label for="senhaUsuario"></label>
+        <input
+            placeholder="Digite sua senha!"
+            type="password"
+            name="senhaUsuario"
+            [(ngModel)]="cadastro.senhaUsuario"
+            #senhaUsuario="ngModel">
+       </div>
+
+       <div class="elemento-formulario">
+        <label for="confirmarSenhaUsuario"></label>
+        <input
+            placeholder="Confirme sua senha!"
+            type="password"
+            name="confirmarSenhaUsuario"
+            [(ngModel)]="cadastro.confirmarSenhaUsuario"
+            #confirmarSenhaUsuario="ngModel">
+       </div>
+        <button class="botoes-formulario" type="submit">Cadastrar</button>
+        <button class="botoes-formulario" type="button" [routerLink]="['']">Voltar</button>
+    </form>
+</div>
+</div>

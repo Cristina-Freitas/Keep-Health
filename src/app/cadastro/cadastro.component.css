@@ -1,0 +1,66 @@
+.login {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+  }
+
+.container{
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: whitesmoke; /* Fundo semitransparente para melhor leitura */
+    border-radius: 10px; /* Cantos arredondados */
+    box-shadow: 0 0 2px rgba(0, 0, 0, 0.75); /* Sombra suave */
+}
+
+.titulo {
+    color:  rgb(25, 6, 6); 
+    text-align: center;
+    text-transform: uppercase; /* Texto em maiúsculas */
+    font-size: 1.5em; /* Tamanho do texto */
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.9);
+}
+
+.cadastroForm{
+    border: none;
+    border-radius: 10px;
+    margin: 5px;
+    padding: 2px 2px;
+    box-shadow: 30px 50px 100px -15px rgba(0,0,0,0.75);
+    -webkit-box-shadow: 30px 50px 100px -15px rgba(0,0,0,0.75);
+    /* -moz-box-shadow: 30px 50px 100px -15px rgba(0,0,0,0.75); */
+  }
+  
+.elemento-formulario {
+    display: flex;
+    flex-direction: column;
+    padding: 3px;
+    width: 90%; /* Largura ajustável */
+    border: none;
+    border-radius: 8px;
+    margin-right: 2px;
+    font-size: 12px;
+}
+
+.botoes-formulario {
+    display: inline-block;
+    justify-content: space-between;
+    margin-top: 16px;
+    margin-right: 50px;
+    margin-left: 30px;
+    padding: 10px;
+    background-color: #0aca20;
+    font-size: 16px; 
+    color: #fff; 
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100px;
+    transition: background-color 0.9s ease; /* Transição suave na cor de fundo */
+}
+
+.botoes-formulario:hover {
+    background-color: #056c30; /* Verde mais escuro no hover */
+}
