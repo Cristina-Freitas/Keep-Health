@@ -1,0 +1,26 @@
+.sidebar {
+    position: fixed;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 200px; /* largura da barra lateral */
+    background-color: #f0f0f0; /* cor de fundo da barra lateral */
+    padding: 20px 0 0 20px; 
+    margin: 110px 0 0 10px;
+  }
+  
+  .sidebar-nav button {
+    display: block; /* exibir como bloco para ocupar toda a largura */
+    width: 100%;
+    padding: 10px;
+    text-align: left;
+    border: none;
+    background-color: transparent; /* botões transparentes */
+    cursor: pointer;
+    margin-bottom: 10px; /* espaço entre os botões */
+    font-size: 22px;
+  }
+  
+  .sidebar-nav button:hover {
+    background-color: #ddd; /* cor de fundo ao passar o mouse */
+  }

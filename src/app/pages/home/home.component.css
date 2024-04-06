@@ -1,0 +1,9 @@
+@media (max-width: 767px) {
+  .grid-container {
+    display: block; /* Altera o layout para um único bloco */
+  }
+  
+  .header {
+    margin-bottom: 20px; /* Adiciona espaço entre o cabeçalho e o sidebar */
+  }
+}

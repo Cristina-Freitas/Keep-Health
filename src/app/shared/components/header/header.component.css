@@ -1,0 +1,42 @@
+header {
+    background-color: #333; /* Cor de fundo do cabeçalho */
+    color: white; /* Cor do texto */
+    padding: 10px 20px; /* Espaçamento interno */
+    margin-bottom: 20px;
+  }
+  
+  .header-content {
+    display: flex; /* Usando flexbox para posicionar os elementos lado a lado */
+    justify-content: space-between; /* Alinhamento dos elementos ao longo do eixo principal */
+    align-items: center; /* Alinhamento dos elementos ao longo do eixo transversal */
+  }
+
+  .title {
+    margin-left: 120px;
+  }
+  
+  .welcome-message {
+    font-size: 24px;
+    padding: 0;
+    margin-left: 20px; /* Afasta a mensagem de boas-vindas do título */
+  }
+  
+  .user-menu button {
+    font-size: 18px;
+    list-style-type: none; /* Remove marcadores de lista */
+    padding: 0; /* Remove o preenchimento padrão da lista */
+    margin-right: 80px; 
+  }
+  
+  .user-menu button {
+    color: none; /* Cor dos links */
+    text-decoration: none; /* Remove sublinhado dos links */
+    padding: 8px 16px; /* Espaçamento interno */
+    border: 1px solid white; /* Borda sólida branca */
+    border-radius: 4px; /* Borda arredondada */
+    transition: background-color 0.3s ease; /* Transição suave da cor de fundo */
+  }
+  
+  .user-menu button:hover {
+    background-color: rgba(255, 255, 255, 0.2); /* Cor de fundo ao passar o mouse */
+  }
