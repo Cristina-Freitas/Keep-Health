@@ -1,12 +1,13 @@
-import { RouterModule, Routes } from '@angular/router';
+import { Routes } from '@angular/router';
 import { LoginComponent } from './pages/login/login.component';
 import { HomeComponent } from './pages/home/home.component';
 import { CadastroComponent } from './pages/cadastro/cadastro.component';
 import { SidebarComponent } from './shared/components/sidebar/sidebar.component';
 import { InicioComponent } from './pages/inicio/inicio.component';
-import { DietasComponent } from './pages/dietas/dietas.component';
-import { PerfilComponent } from './pages/perfil/perfil.component';
+import { DietComponent } from './pages/diet/diet.component';
+import { ProfileComponent } from './pages/profile/profile.component';
 import { HeaderComponent } from './shared/components/header/header.component';
+import { DietDetailComponent } from './pages/diet/diet-detail/diet-detail.component';
 
 export const routes: Routes = [
     {
@@ -41,17 +42,17 @@ export const routes: Routes = [
     
     {
         path: 'dietas',
-        component: DietasComponent
+        component: DietComponent
     },
 
     {
-        path: 'dietas',
-        component: DietasComponent
+        path: 'detalhes',
+        component: DietDetailComponent
     },
 
     {
         path: 'perfil',
-        component: PerfilComponent
+        component: ProfileComponent
     }
     // {
     //     path: '**', redirectTo: ''
