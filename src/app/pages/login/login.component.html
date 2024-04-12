@@ -1,21 +1,20 @@
 <div class="login">
-    <form (ngSubmit)="entrar()"  #loginForm="ngForm">
+    <form (ngSubmit)="entrar()"  [formGroup]="login">
       <h2>Identificação de Usuário</h2> 
       <div class="elemento-formulario">
         <label for="emailUsuario">Entrar com email</label>
         <input
             type="email"
             name="emailUsuario"
-            [(ngModel)]="login.emailUsuario"
-            #emailUsuario="ngModel">
+            formControlName="emailUsuario">
        </div> 
        <div class="elemento-formulario">
         <label for="senhaUsuario">Senha</label>
         <input
             type="password"
             name="senhaUsuario"
-            [(ngModel)]="login.senha"
-            #senha="ngModel">
+            formControlName="senhaUsuario">
+          
        </div>
        <div class="botoes-formulario">
         <button class="cadastrar" type="button" [routerLink]="['/cadastro']">Cadastrar-me</button>

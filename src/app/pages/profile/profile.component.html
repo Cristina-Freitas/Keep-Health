@@ -1,1 +1,21 @@
-<p>perfil works!</p>
+<div class="content">
+    <div class="grid-container">
+      <app-header></app-header>
+      <app-sidebar></app-sidebar>
+    </div>
+  </div>
+
+  <div class="profile-container">
+    <h1 class="titulo">Perfil de Usuário</h1>
+<div class="perfil">
+    <ul >
+        <li><label class="userDate">Nome:</label>{{usuario.nomeUsuario}}</li>
+        <li><label class="userDate">Email:</label>{{usuario.emailUsuario}}</li>
+        <li><label class="userDate">Idade:</label>{{usuario.dataNascimentoUsuario | calculaIdade}}</li>
+        <li><label class="userDate">Peso:</label>{{usuario.pesoUsuario}}kg</li>
+        <li><label class="userDate">Altura:</label>{{usuario.alturaUsuario | alturaEmMetros }}</li>
+        <li><label class="userDate">Cep:</label>{{usuario.cepUsuario}}</li>
+      </ul>
+    
+</div>
+</div>

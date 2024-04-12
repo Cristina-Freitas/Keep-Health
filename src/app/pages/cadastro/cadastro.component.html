@@ -1,36 +1,64 @@
 <div class="container">
     <h1 class="titulo">Cadastro de Usuário</h1>
 <div class="cadastro">
-    <form (ngSubmit)="cadastrar()"  #CadastroForm="ngForm">
+    <form (ngSubmit)="cadastrar()"  [formGroup]="cadastro">
        
         <div class="elemento-formulario">
-            <label for="nome"></label>
+            <label for="nome">Nome:</label>
             <input
                 placeholder="Digite o seu nome!"
                 type="text"
                 name="nomeUsuario"
-                [(ngModel)]="cadastro.nomeUsuario"
-                #nomeUsuario="ngModel">
+                formControlName="nomeUsuario">
+               
            </div> 
         
         <div class="elemento-formulario">
-        <label for="email"></label>
+        <label for="email">Email:</label>
         <input
             placeholder="Digite o seu email!"
             type="email"
             name="emailUsuario"
-            [(ngModel)]="cadastro.emailUsuario"
-            #emailUsuario="ngModel">
+            formControlName="emailUsuario">
        </div> 
 
        <div class="elemento-formulario">
-        <label for="dataNascimento"></label>
+        <label for="dataNascimento">Data de Nascimento:</label>
         <input
             placeholder="Digite a sua Data de nascimento"
-            type="text"
+            type=date
             name="dataNascimentoUsuario"
-            [(ngModel)]="cadastro.dataNascimentoUsuario"
-            #dataNascimentoUsuario="ngModel">
+            formControlName="dataNascimentoUsuario">
+            
+       </div> 
+
+       <div class="elemento-formulario">
+        <label for="peso">Peso (Kg)</label>
+        <input
+            placeholder="Digite o seu peso!"
+            type=number
+            name="pesoUsuario"
+            formControlName="pesoUsuario">
+            
+       </div> 
+   
+       <div class="elemento-formulario">
+        <label for="altura">Altura (cm)</label>
+        <input
+            placeholder="Digite sua altura em cm!"
+            type=number
+            name="alturaUsuario"
+            formControlName="alturaUsuario">
+       </div> 
+
+       <div class="elemento-formulario">
+        <label for="cep">CEP.:</label>
+        <input
+            placeholder="Digite o seu CEP!"
+            type="text"
+            name="cepUsuario"
+            formControlName="cepUsuario">
+            
        </div> 
        
        <div class="elemento-formulario">
@@ -39,8 +67,8 @@
             placeholder="Digite sua senha!"
             type="password"
             name="senhaUsuario"
-            [(ngModel)]="cadastro.senhaUsuario"
-            #senhaUsuario="ngModel">
+            formControlName="senhaUsuario">
+
        </div>
 
        <div class="elemento-formulario">
@@ -49,8 +77,7 @@
             placeholder="Confirme sua senha!"
             type="password"
             name="confirmarSenhaUsuario"
-            [(ngModel)]="cadastro.confirmarSenhaUsuario"
-            #confirmarSenhaUsuario="ngModel">
+            formControlName="confirmarSenhaUsuario">
        </div>
         <button class="botoes-formulario" type="submit">Cadastrar</button>
         <button class="botoes-formulario" type="button" [routerLink]="['']">Voltar</button>
