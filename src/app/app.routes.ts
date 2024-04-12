@@ -42,7 +42,11 @@ export const routes: Routes = [
     
     {
         path: 'dietas',
-        component: DietComponent
+        children:[
+            { path: '', component: DietComponent},
+            { path: ':alimento', component: DietDetailComponent}
+            
+        ]
     },
 
     {
