@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { RouterLink } from '@angular/router';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-sidebar',
@@ -9,5 +9,19 @@ import { RouterLink } from '@angular/router';
   styleUrl: './sidebar.component.scss'
 })
 export class SidebarComponent {
+
+  constructor(private router: Router) { }
+dietas() {
+this.router.navigate(['dietas']);
+}
+perfil() {
+this.router.navigate(['perfil']);
+}
+home() {
+this.router.navigate(['home']);
+}
+sair() {
+  this.router.navigate(['login']);
+  }
 
 }

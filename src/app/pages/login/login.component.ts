@@ -44,8 +44,9 @@ novoUsuario: any = {
 
 criarUsuario(){
   let usuarios = this.getStorage();
-  if(usuarios.find((usuario:{emailUsuario: string}) => usuario.emailUsuario == this.novoUsuario.emailUsuario)){
-     window.alert('Email ja existe!');
+  if(usuarios.find((usuario:{emailUsuario: string}) => 
+                    usuario.emailUsuario == this.novoUsuario.emailUsuario)){
+    //  window.alert('Email ja existe!');
   }else{
     usuarios.push(this.novoUsuario);
     this.localStorage?.setItem('usuarios', JSON.stringify(usuarios));
@@ -83,6 +84,7 @@ getStorage(){
           this.usuarios = usuarioLogado;
           this.localStorage?.setItem("usuarios", JSON.stringify(this.usuarios))
           this.router.navigate(['/home']);
+          this.login.reset();
         }else{
           window.alert('Usuário ou senha inválidos!')
         }
@@ -92,7 +94,8 @@ getStorage(){
 
   verificaEmail(){
     let usuarios = this.getStorage();
-    return usuarios.find((usuario: {emailUsuario: string | null | undefined;})=> usuario.emailUsuario === this.login.value.emailUsuario);
+    return usuarios.find((usuario: {emailUsuario: string | null | undefined;})=> 
+                          usuario.emailUsuario === this.login.value.emailUsuario);
   };
 
 // const usuarios = JSON.parse(localStorage.getItem('usuarios') || '[]');

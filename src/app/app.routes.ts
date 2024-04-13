@@ -12,9 +12,15 @@ import { DietDetailComponent } from './pages/diet/diet-detail/diet-detail.compon
 export const routes: Routes = [
     {
         path: '',
+        redirectTo: 'login',
+        pathMatch: 'full'
+    },
+
+    {
+        path: 'login',
         component: LoginComponent
     },
-     
+
     {
         path: 'home',
         component: HomeComponent

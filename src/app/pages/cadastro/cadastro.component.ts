@@ -1,6 +1,6 @@
 import { CommonModule, DOCUMENT, DatePipe } from '@angular/common';
 import { Component, Inject } from '@angular/core';
-import { FormControl, FormGroup, FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { FormControl, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
 import { Router, RouterLink } from '@angular/router';
 
 @Component({
@@ -18,14 +18,14 @@ import { Router, RouterLink } from '@angular/router';
 })
 export class CadastroComponent {
   cadastro = new FormGroup({
-    nomeUsuario: new FormControl(''),
-    emailUsuario: new FormControl(''),
-    dataNascimentoUsuario: new FormControl(''),
-    pesoUsuario: new FormControl(0),
-    alturaUsuario: new FormControl(0),
-    cepUsuario: new FormControl(''),
-    senhaUsuario: new FormControl(''),
-    confirmarSenhaUsuario: new FormControl('')
+    nomeUsuario: new FormControl('', Validators.required),
+    emailUsuario: new FormControl('', Validators.required),
+    dataNascimentoUsuario: new FormControl('', Validators.required),
+    pesoUsuario: new FormControl(0, [Validators.required, Validators.min(1)]),
+    alturaUsuario: new FormControl(0, [Validators.required, Validators.min(1)]),
+    cepUsuario: new FormControl('', Validators.required),
+    senhaUsuario: new FormControl('', [Validators.required, Validators.min(4)]),
+    confirmarSenhaUsuario: new FormControl('', [Validators.required, Validators.min(4)])
   });
 
   localStorage;
@@ -48,8 +48,8 @@ export class CadastroComponent {
   };
 
   senhasIguais(): boolean {
-    return this.cadastro.value.senhaUsuario === this.cadastro.value.confirmarSenhaUsuario
-    
+    return this.cadastro.value.senhaUsuario === 
+           this.cadastro.value.confirmarSenhaUsuario    
   }
   cadastrar(){
     if(this.camposValidos() && this.senhasIguais()){
@@ -58,6 +58,7 @@ export class CadastroComponent {
         usuarios.push(this.cadastro.value);
         localStorage.setItem('usuarios', JSON.stringify(usuarios)); 
         this.router.navigate(['']);
+        this.cadastro.reset();
     }else{
       window.alert('Preencha todos os campos corretamente e verifique se as senhas conferem para prosseguir!')
     }

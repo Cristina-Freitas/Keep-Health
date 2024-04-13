@@ -9,18 +9,37 @@
                 placeholder="Digite o seu nome!"
                 type="text"
                 name="nomeUsuario"
-                formControlName="nomeUsuario">
-               
-           </div> 
+                formControlName="nomeUsuario"
+                required
+                [ngClass]="{'error-border': (cadastro.controls.nomeUsuario.dirty ||
+                                             cadastro.controls.nomeUsuario.touched) &&
+                                             cadastro.controls.nomeUsuario.errors}"/>
+                <span class="error-message"
+                *ngIf="(cadastro.controls.nomeUsuario.dirty ||
+                        cadastro.controls.nomeUsuario.touched) &&
+                        cadastro.controls.nomeUsuario.errors &&
+                        cadastro.controls.nomeUsuario.errors['required']"
+                                >Digite seu nome</span>          
+        </div> 
         
         <div class="elemento-formulario">
         <label for="email">Email:</label>
         <input
             placeholder="Digite o seu email!"
-            type="email"
+            type=email
             name="emailUsuario"
-            formControlName="emailUsuario">
-       </div> 
+            formControlName="emailUsuario"
+            required
+            [ngClass]="{'error-border': (cadastro.controls.emailUsuario.dirty ||
+                                         cadastro.controls.emailUsuario.touched) &&
+                                         cadastro.controls.emailUsuario.errors}"/>
+             <span class="error-message"
+             *ngIf="(cadastro.controls.emailUsuario.dirty ||
+                     cadastro.controls.emailUsuario.touched) &&
+                     cadastro.controls.emailUsuario.errors &&
+                     cadastro.controls.emailUsuario.errors['required']"
+                                  >Digite seu e-mail</span>   
+    </div> 
 
        <div class="elemento-formulario">
         <label for="dataNascimento">Data de Nascimento:</label>
@@ -28,8 +47,17 @@
             placeholder="Digite a sua Data de nascimento"
             type=date
             name="dataNascimentoUsuario"
-            formControlName="dataNascimentoUsuario">
-            
+            formControlName="dataNascimentoUsuario"
+            required
+            [ngClass]="{'error-border': (cadastro.controls.dataNascimentoUsuario.dirty ||
+                                         cadastro.controls.dataNascimentoUsuario.touched) &&
+                                         cadastro.controls.dataNascimentoUsuario.errors}"/>
+         <span class="error-message"
+         *ngIf="(cadastro.controls.dataNascimentoUsuario.dirty ||
+                 cadastro.controls.dataNascimentoUsuario.touched) &&
+                 cadastro.controls.dataNascimentoUsuario.errors &&
+                 cadastro.controls.dataNascimentoUsuario.errors['required']"
+                         >Digite sua data de nascimento</span>           
        </div> 
 
        <div class="elemento-formulario">
@@ -38,9 +66,18 @@
             placeholder="Digite o seu peso!"
             type=number
             name="pesoUsuario"
-            formControlName="pesoUsuario">
-            
-       </div> 
+            formControlName="pesoUsuario"
+            required
+                [ngClass]="{'error-border': (cadastro.controls.pesoUsuario.dirty ||
+                                             cadastro.controls.pesoUsuario.touched) &&
+                                             cadastro.controls.pesoUsuario.errors}"/>           
+              <span class="error-message"
+              *ngIf="(cadastro.controls.pesoUsuario.dirty ||
+                      cadastro.controls.pesoUsuario.touched) &&
+                      cadastro.controls.pesoUsuario.errors &&
+                      cadastro.controls.pesoUsuario.errors['min']"
+                           >Digite seu peso aproximado</span>   
+    </div> 
    
        <div class="elemento-formulario">
         <label for="altura">Altura (cm)</label>
@@ -48,36 +85,87 @@
             placeholder="Digite sua altura em cm!"
             type=number
             name="alturaUsuario"
-            formControlName="alturaUsuario">
+            formControlName="alturaUsuario"
+            required
+            [ngClass]="{'error-border': (cadastro.controls.alturaUsuario.dirty ||
+                                         cadastro.controls.alturaUsuario.touched) &&
+                                         cadastro.controls.alturaUsuario.errors}"/>
+             <span class="error-message"
+             *ngIf="(cadastro.controls.alturaUsuario.dirty ||
+                     cadastro.controls.alturaUsuario.touched) &&
+                     cadastro.controls.alturaUsuario.errors &&
+                     cadastro.controls.alturaUsuario.errors['min']"
+                            >Digite um valor diferente de zero</span>
        </div> 
 
        <div class="elemento-formulario">
         <label for="cep">CEP.:</label>
         <input
-            placeholder="Digite o seu CEP!"
+            placeholder="00000-000"
             type="text"
             name="cepUsuario"
-            formControlName="cepUsuario">
-            
+            formControlName="cepUsuario"
+            required
+            [ngClass]="{'error-border': (cadastro.controls.cepUsuario.dirty ||
+                                         cadastro.controls.cepUsuario.touched) &&
+                                         cadastro.controls.cepUsuario.errors}"/>
+        <span class="error-message"
+        *ngIf="(cadastro.controls.cepUsuario.dirty ||
+                cadastro.controls.cepUsuario.touched) &&
+                cadastro.controls.cepUsuario.errors &&
+                cadastro.controls.cepUsuario.errors['required']"
+                     >Digite seu CEP</span>           
        </div> 
        
        <div class="elemento-formulario">
         <label for="senhaUsuario"></label>
         <input
             placeholder="Digite sua senha!"
-            type="password"
+            type=password
             name="senhaUsuario"
-            formControlName="senhaUsuario">
-
+            formControlName="senhaUsuario"
+            required
+            [ngClass]="{'error-border': (cadastro.controls.senhaUsuario.dirty ||
+                                         cadastro.controls.senhaUsuario.touched) &&
+                                         cadastro.controls.senhaUsuario.errors}"/>
+            <span class="error-message"
+            *ngIf="(cadastro.controls.senhaUsuario.dirty ||
+                    cadastro.controls.senhaUsuario.touched) &&
+                    cadastro.controls.senhaUsuario.errors &&
+                    cadastro.controls.senhaUsuario.errors['required']"
+                                >Digite uma senha</span>
+            <span class="error-message"
+            *ngIf="(cadastro.controls.senhaUsuario.dirty &&
+                    cadastro.controls.senhaUsuario.touched) &&
+                    cadastro.controls.senhaUsuario.errors &&
+                    cadastro.controls.senhaUsuario.errors['minlength']"
+                        >Sua senha deve ter pelo menos 4 caracteres</span>
        </div>
 
        <div class="elemento-formulario">
         <label for="confirmarSenhaUsuario"></label>
         <input
             placeholder="Confirme sua senha!"
-            type="password"
+            type=password
             name="confirmarSenhaUsuario"
-            formControlName="confirmarSenhaUsuario">
+            formControlName="confirmarSenhaUsuario"
+            required
+            [ngClass]="{'error-border': (cadastro.controls.confirmarSenhaUsuario.dirty ||
+                                         cadastro.controls.confirmarSenhaUsuario.touched) &&
+                                         cadastro.controls.confirmarSenhaUsuario.errors}"/>
+            
+            <span class="error-message"
+            *ngIf="(cadastro.controls.confirmarSenhaUsuario.dirty ||
+                    cadastro.controls.confirmarSenhaUsuario.touched) &&
+                    cadastro.controls.confirmarSenhaUsuario.errors &&
+                    cadastro.controls.confirmarSenhaUsuario.errors['required']"
+                            >Confirme sua senha</span>
+            <span class="error-message"
+            *ngIf="(cadastro.controls.confirmarSenhaUsuario.dirty &&
+                    cadastro.controls.confirmarSenhaUsuario.touched) &&
+                    cadastro.controls.confirmarSenhaUsuario.errors &&
+                    cadastro.controls.confirmarSenhaUsuario.errors['minlength']"
+                        >Sua senha deve ter pelo menos 4 caracteres</span>
        </div>
         <button class="botoes-formulario" type="submit">Cadastrar</button>
         <button class="botoes-formulario" type="button" [routerLink]="['']">Voltar</button>
