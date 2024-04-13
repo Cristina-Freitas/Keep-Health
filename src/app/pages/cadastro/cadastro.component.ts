@@ -21,11 +21,11 @@ export class CadastroComponent {
     nomeUsuario: new FormControl('', Validators.required),
     emailUsuario: new FormControl('', Validators.required),
     dataNascimentoUsuario: new FormControl('', Validators.required),
-    pesoUsuario: new FormControl(0, [Validators.required, Validators.min(1)]),
-    alturaUsuario: new FormControl(0, [Validators.required, Validators.min(1)]),
+    pesoUsuario: new FormControl('', [Validators.required]),
+    alturaUsuario: new FormControl('', [Validators.required]),
     cepUsuario: new FormControl('', Validators.required),
-    senhaUsuario: new FormControl('', [Validators.required, Validators.min(4)]),
-    confirmarSenhaUsuario: new FormControl('', [Validators.required, Validators.min(4)])
+    senhaUsuario: new FormControl('', [Validators.minLength(4), Validators.required]),
+    confirmarSenhaUsuario: new FormControl('', [Validators.minLength(4), Validators.required])
   });
 
   localStorage;

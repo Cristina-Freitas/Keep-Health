@@ -75,8 +75,8 @@
               *ngIf="(cadastro.controls.pesoUsuario.dirty ||
                       cadastro.controls.pesoUsuario.touched) &&
                       cadastro.controls.pesoUsuario.errors &&
-                      cadastro.controls.pesoUsuario.errors['min']"
-                           >Digite seu peso aproximado</span>   
+                      cadastro.controls.pesoUsuario.errors['required']"
+                           >Digite um valor diferente de zero</span>   
     </div> 
    
        <div class="elemento-formulario">
@@ -90,12 +90,18 @@
             [ngClass]="{'error-border': (cadastro.controls.alturaUsuario.dirty ||
                                          cadastro.controls.alturaUsuario.touched) &&
                                          cadastro.controls.alturaUsuario.errors}"/>
-             <span class="error-message"
+              <span class="error-message"
+              *ngIf="(cadastro.controls.alturaUsuario.dirty ||
+                      cadastro.controls.alturaUsuario.touched) &&
+                      cadastro.controls.alturaUsuario.errors &&
+                      cadastro.controls.alturaUsuario.errors['required']"
+                             >Digite sua altura aproximada</span>
+             <!-- <span class="error-message"
              *ngIf="(cadastro.controls.alturaUsuario.dirty ||
                      cadastro.controls.alturaUsuario.touched) &&
                      cadastro.controls.alturaUsuario.errors &&
-                     cadastro.controls.alturaUsuario.errors['min']"
-                            >Digite um valor diferente de zero</span>
+                     cadastro.controls.alturaUsuario.errors['minlength']"
+                            >Digite um valor diferente de zero</span> -->
        </div> 
 
        <div class="elemento-formulario">
