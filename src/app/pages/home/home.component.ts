@@ -13,7 +13,7 @@ import { SharedModule } from '../../shared/shared.module';
             CommonModule
   ],
   templateUrl: './home.component.html',
-  styleUrl: './home.component.css'
+  styleUrl: './home.component.scss'
 })
 export class HomeComponent {
 

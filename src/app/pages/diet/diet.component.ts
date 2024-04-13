@@ -16,7 +16,7 @@ import { SharedModule } from '../../shared/shared.module';
             
   ],
   templateUrl: './diet.component.html',
-  styleUrl: './diet.component.css'
+  styleUrl: './diet.component.scss'
 })
 export class DietComponent {
 

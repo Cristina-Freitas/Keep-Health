@@ -13,7 +13,7 @@ import { SharedModule } from '../../shared/shared.module';
     selector: 'app-profile',
     standalone: true,
     templateUrl: './profile.component.html',
-    styleUrl: './profile.component.css',
+    styleUrl: './profile.component.scss',
     imports: [CalculaIdadePipe,
               AlturaEmMetrosPipe,
               SharedModule,

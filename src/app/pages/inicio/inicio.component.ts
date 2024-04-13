@@ -6,7 +6,7 @@ import { HomeComponent } from '../home/home.component';
   standalone: true,
   imports: [HomeComponent],
   templateUrl: './inicio.component.html',
-  styleUrl: './inicio.component.css'
+  styleUrl: './inicio.component.scss'
 })
 export class InicioComponent {
 

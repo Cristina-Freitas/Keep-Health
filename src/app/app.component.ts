@@ -7,7 +7,7 @@ import { CommonModule } from '@angular/common';
     selector: 'app-root',
     standalone: true,
     templateUrl: './app.component.html',
-    styleUrl: './app.component.css',
+    styleUrl: './app.component.scss',
     imports: [CommonModule,RouterOutlet, SharedModule]
 })
 export class AppComponent implements OnInit {

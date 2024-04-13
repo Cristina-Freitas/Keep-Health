@@ -7,7 +7,7 @@ import { SharedModule } from '../../../shared/shared.module';
     selector: 'app-diet-detail',
     standalone: true,
     templateUrl: './diet-detail.component.html',
-    styleUrl: './diet-detail.component.css',
+    styleUrl: './diet-detail.component.scss',
     imports: [SharedModule, 
               CommonModule
             ],
