@@ -10,15 +10,12 @@
     <div class="pesquisar">
       <input type="text" [(ngModel)]="textoPesquisa" >
       <button (click)="buscarAlimentos()" >Pesquisar</button>
-      <!-- <form class="diet-form" (submit)="buscarAlimentos()">
-      <input type="text" [(ngModel)]="buscarAlimentos" [ngModelOptions]="{standalone: true}">
-      <button type="submit" >Pesquisar</button>
-      </form> -->
+
   </div>
 
     <h1 class="titulo">Lista de Alimentos</h1>
 <div class="diet">
-  <div *ngFor="let alimentos of listaDeAlimentos" (click)="redirectToDetail(alimentos.name)">
+  <div *ngFor="let alimentos of listaDeAlimentos" (click)="redirectToDetail(alimentos.id)">
     <div class="lista-card">
         <div class="card-header">
         <h2 class="card-nome">{{alimentos?.name}}</h2>     

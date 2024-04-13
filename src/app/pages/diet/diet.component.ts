@@ -22,10 +22,12 @@ import { Router, RouterModule } from '@angular/router';
 export class DietComponent {
 
   listaAlimentos: any[] = [];
-
   listaDeAlimentos: any[] = [];
-
   buscarAlimento: string = '';
+  textoPesquisa: string = '';
+
+  @Input() alimentos: {image: string; name: string; description: string;} | undefined
+alimento: any;
 
   constructor(private router: Router) {
     // Carrega os alimentos do localStorage ao inicializar o componente
@@ -36,20 +38,19 @@ export class DietComponent {
     }
   }
 
-  // Função para buscar alimentos com base no termo de busca
-  textoPesquisa: string | undefined;
-  filtrar = this.listaAlimentos
+  // filtrar = this.listaAlimentos
   buscarAlimentos(){
     if(!this.textoPesquisa){
-      this.filtrar = this.listaAlimentos;
+      this.listaDeAlimentos = this.listaAlimentos;
     }else{
-      this.filtrar = this.listaAlimentos.filter(alimentos => alimentos.description === this.textoPesquisa);
+      this.listaDeAlimentos = this.listaAlimentos.filter(alimento =>
+         alimento.name.includes(this.textoPesquisa));
     }
-  
+    this.textoPesquisa = '';
   }
 
   // Função para redirecionar para a página de detalhes do alimento
-  redirectToDetail(name: string): void {
-    this.router.navigate(['diet', name]);
+  redirectToDetail(id: number){
+    this.router.navigate(['diet-detail', id]);
   }
 }

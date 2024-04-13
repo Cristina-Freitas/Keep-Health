@@ -26,11 +26,17 @@
 }
 
 .pesquisar input{    
-      width: calc(100% - 8px); /* usar toda a largura disponível */
+      width: calc(90% - 8px); /* usar toda a largura disponível */
       margin-bottom: 8px; /* add espaço entre o input e o botão */
-  }
+      font-size: 20px;
+    }
 
 .pesquisar  button {
-    margin-left: 0; /* Remove a margem do botão */
+    margin-left: 02px; /* Remove a margem do botão */
     margin-top: 8px; /* add espaço entre o input e o botão */
+    font-size: 20px;
+}
+
+.lista-card {
+    cursor: pointer;
   }

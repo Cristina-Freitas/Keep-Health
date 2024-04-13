@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { HeaderComponent } from "../../../shared/components/header/header.component";
 import { SidebarComponent } from "../../../shared/components/sidebar/sidebar.component";
 import { ActivatedRoute, Router } from '@angular/router';
@@ -13,27 +13,29 @@ import { Location } from '@angular/common';
               SidebarComponent
             ]
 })
-export class DietDetailComponent {
-    alimentos: any = {};
-    nomeAlimento: string = '';
+export class DietDetailComponent implements OnInit{
+  alimento: any;  
+  alimentos: any = {};
+  nomeAlimento: string = '';
 
-    constructor(private activatedRoute: ActivatedRoute,
-                private router: Router,
+    constructor(private route: ActivatedRoute,
                 private location: Location
     ){};
 
     ngOnInit(){
-        this.activatedRoute.params.subscribe((parameters)=>{
-            this.nomeAlimento = parameters['id'];
-        });
-
-        let listaAlimentos = this.getStorage('alimentos')
-        let pesquisado = listaAlimentos.filter((pesquisado: {name: string | undefined;}) =>
-                                                pesquisado.name === this.alimentos);
-        this.nomeAlimento = pesquisado[0];
+       // Captura o id do alimento da rota
+    this.route.params.subscribe(params => {
+      const id = params['id'];
+      // Carrega as informações do alimento com base no id (pode ser obtido do localStorage)
+      const alimentosLocalStorage = localStorage.getItem('alimentos');
+      if (alimentosLocalStorage) {
+        const alimentos: any[] = JSON.parse(alimentosLocalStorage);
+        this.alimento = alimentos.find(alimento => 
+                          alimento.id === Number(id));       
     };
-
-    getStorage(alimentos: string){
+  });
+}
+    getStorage(){
         const alimentoLocalStorage = localStorage.getItem("alimentos");
         if(!!alimentoLocalStorage){
           return JSON.parse(alimentoLocalStorage);
