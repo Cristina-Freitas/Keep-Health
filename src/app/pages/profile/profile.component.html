@@ -14,8 +14,17 @@
         <li><label class="userDate">Idade:</label>{{usuario.dataNascimentoUsuario | calculaIdade}}</li>
         <li><label class="userDate">Peso:</label>{{usuario.pesoUsuario}}kg</li>
         <li><label class="userDate">Altura:</label>{{usuario.alturaUsuario | alturaEmMetros }}</li>
-        <li><label class="userDate">Cep:</label>{{usuario.cepUsuario}}</li>
-      </ul>
-    
+        <div>
+        <li id="cep"><label class="userDate">Cep:</label>
+          <input type="text" id="cep" [(ngModel)]="cep">
+          <button (click)="buscarCep()">Pesquisar</button>
+        </li>
+      </div>
+        <li *ngIf="address"><label class="userDate">Endereço:</label>
+          {{address.logradouro}}, {{address.complemento}} - 
+          {{address.bairro}} - 
+          {{address.localidade}}/{{address.uf}}.
+        </li>
+      </ul>   
 </div>
 </div>

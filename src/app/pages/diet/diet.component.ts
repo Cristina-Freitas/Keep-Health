@@ -51,6 +51,6 @@ alimento: any;
 
   // Função para redirecionar para a página de detalhes do alimento
   redirectToDetail(id: number){
-    this.router.navigate(['diet-detail', id]);
+    this.router.navigate(['dietas', 'detalhes', id]);
   }
 }

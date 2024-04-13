@@ -45,7 +45,7 @@ export const routes: Routes = [
         children:[
             { path: '', component: DietComponent},
             { path: ':alimento', component: DietDetailComponent},
-            { path: ':id', component: DietDetailComponent}
+            { path: 'detalhes/:id', component: DietDetailComponent}
         ]
     },
 
