@@ -39,7 +39,7 @@ novoUsuario: any = {
   pesoUsuario: 50,
   alturaUsuario: 160,
   cepUsuario: '88015-600',
-  auth: true
+  auth: false
 };
 
 criarUsuario(){

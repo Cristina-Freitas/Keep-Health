@@ -1,17 +1,16 @@
 import { Component, OnInit } from '@angular/core';
-import { HeaderComponent } from "../../../shared/components/header/header.component";
-import { SidebarComponent } from "../../../shared/components/sidebar/sidebar.component";
-import { ActivatedRoute, Router } from '@angular/router';
-import { Location } from '@angular/common';
+import { ActivatedRoute } from '@angular/router';
+import { CommonModule, Location } from '@angular/common';
+import { SharedModule } from '../../../shared/shared.module';
 
 @Component({
     selector: 'app-diet-detail',
     standalone: true,
     templateUrl: './diet-detail.component.html',
     styleUrl: './diet-detail.component.css',
-    imports: [HeaderComponent, 
-              SidebarComponent
-            ]
+    imports: [SharedModule, 
+              CommonModule
+            ],
 })
 export class DietDetailComponent implements OnInit{
   alimento: any;  

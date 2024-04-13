@@ -1,15 +1,13 @@
 import { Component } from '@angular/core';
-import { SidebarComponent } from '../../shared/components/sidebar/sidebar.component';
 import { CommonModule } from '@angular/common';
-import { HeaderComponent } from '../../shared/components/header/header.component';
 import { RouterLink } from '@angular/router';
 import { LoginComponent } from '../login/login.component';
+import { SharedModule } from '../../shared/shared.module';
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [SidebarComponent,
-            HeaderComponent,
+  imports: [SharedModule,
             LoginComponent,
             RouterLink,
             CommonModule

@@ -1,13 +1,14 @@
 import { Component, OnInit } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { SidebarComponent } from "./shared/components/sidebar/sidebar.component";
+import { SharedModule } from './shared/shared.module';
+import { CommonModule } from '@angular/common';
 
 @Component({
     selector: 'app-root',
     standalone: true,
     templateUrl: './app.component.html',
     styleUrl: './app.component.css',
-    imports: [RouterOutlet, SidebarComponent]
+    imports: [CommonModule,RouterOutlet, SharedModule]
 })
 export class AppComponent implements OnInit {
   title = 'Keep-Health';

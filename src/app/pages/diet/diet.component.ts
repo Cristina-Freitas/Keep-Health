@@ -1,20 +1,19 @@
 import { Component, Input } from '@angular/core';
-import { HeaderComponent } from '../../shared/components/header/header.component';
-import { SidebarComponent } from '../../shared/components/sidebar/sidebar.component';
 import { LoginComponent } from '../login/login.component';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { Router, RouterModule } from '@angular/router';
+import { SharedModule } from '../../shared/shared.module';
 
 @Component({
   selector: 'app-diet',
   standalone: true,
-  imports: [HeaderComponent,
-            SidebarComponent,
+  imports: [SharedModule,
             LoginComponent,
             FormsModule,
             CommonModule,
             RouterModule
+            
   ],
   templateUrl: './diet.component.html',
   styleUrl: './diet.component.css'
