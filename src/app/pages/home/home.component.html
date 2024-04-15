@@ -5,3 +5,73 @@
     </div>
   </div>
 
+<div class="home-container">
+
+
+  <p-button (click)="showDialog()" icon="pi pi-external-link" label="Adicionar atividade" size="large"></p-button>
+
+  <p-dialog [(visible)]="visible" [breakpoints]="{ '480px': '100vw','768px': '80','1024px': '70vw' }"
+      [style]="{width: '60vw'}">
+
+      <ng-template class="myheader" pTemplate="header">
+          <p *ngIf="editarAtividade == null">Adicione uma atividade</p>
+          <p *ngIf="editarAtividade">Modifique essa atividade</p>
+      </ng-template>
+
+      <div [formGroup]="novaAtividade" class="add-atividade">
+
+          <label for="tipo-atividade">Escolha a atividade*:</label>
+          <select name="tipo-atividade" id="tipo-atividade" formControlName="type" 
+          [ngClass]="{'error-border': (novaAtividade.controls.type.dirty ||
+                                      novaAtividade.controls.type.touched) &&
+                                      novaAtividade.controls.type.errors}">
+              <option *ngFor="let tipoAtividade of tiposDeAtividades" 
+              [ngValue]="tipoAtividade.name">
+                  {{ tipoAtividade.name }}
+          </select>
+          <span class="error-message" *ngIf="(novaAtividade.controls.type.dirty ||
+                                              novaAtividade.controls.type.touched) &&
+                                              novaAtividade.controls.type.errors &&
+                                              novaAtividade.controls.type.errors['required']"
+            >Preencha a categoria da atividade realizada</span>
+
+          <label for="titulo-atividade">Nome ou descrição da atividade*:</label>
+          <input type="text" id="titulo-atividade" name="titulo-atividade" formControlName="title" 
+          [ngClass]="{'error-border': (novaAtividade.controls.title.dirty ||
+                                      novaAtividade.controls.title.touched) &&
+                                      novaAtividade.controls.title.errors}" />
+          <span class="error-message" *ngIf="(novaAtividade.controls.title.dirty ||
+                                              novaAtividade.controls.title.touched) &&
+                                              novaAtividade.controls.title.errors &&
+                                              novaAtividade.controls.title.errors['required']"
+                        >Preencha o nome ou a descrição da atividade</span>
+
+          <label for="data-atividade">Data*:</label>
+          <input type="date" id="data-atividade" name="data-atividade" formControlName="date" 
+          [ngClass]="{'error-border': (novaAtividade.controls.date.dirty ||
+                                       novaAtividade.controls.date.touched) &&
+                                       novaAtividade.controls.date.errors}" />
+          <span class="error-message" *ngIf="(novaAtividade.controls.date.dirty ||
+                                              novaAtividade.controls.date.touched) &&
+                                              novaAtividade.controls.date.errors &&
+                                              novaAtividade.controls.date.errors['required']"
+                                  >Preencha a data</span>
+
+          <label for="distancia-atividade">Distância (m): <em>opcional</em></label>
+          <input type="number" id="distancia-atividade" name="distancia-atividade" formControlName="distance">
+
+          <label for="tempo-atividade">Tempo: <em>opcional</em></label>
+          <input type="time" id="tempo-atividade" name="tempo-atividade" formControlName="time">
+      </div>
+
+      <ng-template pTemplate="footer">
+          <p-button (click)="visible = false" type="cancel" severity="secondary" label="Cancelar"></p-button>
+
+          <p-button *ngIf="editarAtividade" (click)="deletarAtividade()" severity="danger" label="Remover"></p-button>
+
+          <p-button (click)="salvarAtividade()" type="submit" label="Salvar"></p-button>
+      </ng-template>
+
+  </p-dialog>
+</div>
+

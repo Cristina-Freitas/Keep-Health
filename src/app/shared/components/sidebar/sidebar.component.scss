@@ -33,6 +33,7 @@ $sidebar-width: 200px; // Largura da sidebar
       height: 100%; /* Define a altura como automática para acomodar o conteúdo */
       padding: 10px; /* Ajuste do espaçamento interno */
       margin: 100px 0; /* Ajuste da margem */
+
     }
   }
   
@@ -42,11 +43,13 @@ $sidebar-width: 200px; // Largura da sidebar
       height: 100%; /* Define a altura como automática para acomodar o conteúdo */
       padding: 10px; /* Ajuste do espaçamento interno */
       margin: 80px 0; /* Ajuste da margem */
+
     }
   }
   
   @media (min-width: 1024px) {
     .sidebar {
       width: 300px; /* Ajuste da largura */
+
     }
   }

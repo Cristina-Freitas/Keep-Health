@@ -1,10 +1,11 @@
 .diet-container{
-    max-width: 70%;
-    margin: 0 auto;
+    margin: 0 10px;
+    margin-left: 330px;
     padding: 15px;
     background-color: whitesmoke; /* Fundo semitransparente para melhor leitura */
     border-radius: 10px; /* Cantos arredondados */
     box-shadow: 0 0 2px rgba(0, 0, 0, 0.75); /* Sombra suave */
+    
 }
 
 .titulo {
@@ -25,6 +26,12 @@
     border-radius: 3px;
 }
 
+.pesquisar {
+    display: flex; /* Usando flexbox para posicionar os elementos lado a lado */
+    justify-content: space-between; /* Alinhamento dos elementos ao longo do eixo principal */
+    align-items: center; /* Alinhamento dos elementos ao longo do eixo transversal */
+}
+
 .pesquisar input{    
       width: calc(90% - 8px); /* usar toda a largura disponível */
       margin-bottom: 8px; /* add espaço entre o input e o botão */
@@ -39,4 +46,102 @@
 
 .lista-card {
     cursor: pointer;
+    width: 45%;
+  }
+
+  @media (max-width: 767px){
+    .diet-container{
+        max-width: 70%;
+        margin: 0 auto;
+        padding: 15px;
+        background-color: whitesmoke; /* Fundo semitransparente para melhor leitura */
+        border-radius: 10px; /* Cantos arredondados */
+        box-shadow: 0 0 2px rgba(0, 0, 0, 0.75); /* Sombra suave */
+    }
+    
+    .titulo {
+        color:  rgb(25, 6, 6); 
+        text-align: center;
+        text-transform: uppercase; /* Texto em maiúsculas */
+        font-size: 1.5em; /* Tamanho do texto */
+        margin-bottom: 20px;
+        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.9);
+    }
+    
+    .diet {
+        font-size: 1.3em;
+        padding: 6px 20px;
+        margin-right: 8px;
+        margin-left: 5px;
+        border: 1px solid #ccc;
+        border-radius: 3px;
+    }
+    
+    .pesquisar input{    
+          width: calc(90% - 8px); /* usar toda a largura disponível */
+          margin-bottom: 8px; /* add espaço entre o input e o botão */
+          font-size: 20px;
+        }
+    
+    .pesquisar  button {
+        margin-left: 02px; /* Remove a margem do botão */
+        margin-top: 8px; /* add espaço entre o input e o botão */
+        font-size: 20px;
+    }
+  }
+
+  @media (min-width: 768px) and (max-width: 1023px){
+    .diet-container{
+       width: 70%;
+       height: auto;
+    }
+    
+    .titulo {
+        color:  rgb(25, 6, 6); 
+        text-align: center;
+        text-transform: uppercase; /* Texto em maiúsculas */
+        font-size: 1.5em; /* Tamanho do texto */
+        margin-bottom: 20px;
+        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.9);
+    }
+    
+   
+    
+  
+    }
+
+
+  @media (max-width: 1024px){
+    .diet-container{
+        margin-left: 600px;
+        margin: 0 auto;
+        padding: 15px;
+        background-color: whitesmoke; /* Fundo semitransparente para melhor leitura */
+        border-radius: 10px; /* Cantos arredondados */
+        box-shadow: 0 0 2px rgba(0, 0, 0, 0.75); /* Sombra suave */
+    }
+    
+    .titulo {
+        color:  rgb(25, 6, 6); 
+        text-align: center;
+        text-transform: uppercase; /* Texto em maiúsculas */
+        font-size: 1.5em; /* Tamanho do texto */
+        margin-bottom: 20px;
+        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.9);
+    }
+    
+    .diet {
+        font-size: 1.3em;
+        padding: 6px 20px;
+        margin-right: 8px;
+        margin-left: 5px;
+        border: 1px solid #ccc;
+        border-radius: 3px;
+    }
+
+    .lista-card{
+        width: 10%;
+    }
+    
+
   }

@@ -1,9 +1,29 @@
-@media (max-width: 767px) {
-  .grid-container {
-    display: block; /* Altera o layout para um único bloco */
+@import '../../../assets/styles/mixins';
+@import '../../../assets/styles/variables';
+
+
+.home-container {
+  display: flex; /* Altera o layout para um único bloco */
+  margin-top: 2em;
+  margin-left: 30em;
+  width: calc(90% - 200px)
+}
+@media (max-width: 767px) and (max-width: 1023px){
+  .home-container {
+    display: flex; /* Altera o layout para um único bloco */
+    margin-top: 7em;
+    width: calc(90% - 600px)
   }
   
   .header {
     margin-bottom: 20px; /* Adiciona espaço entre o cabeçalho e o sidebar */
   }
+
+  @media screen and (max-width: 1024px) {
+    .home-container {
+        display: flex;
+        padding-top: 4em;
+    }
+}
+
 }
