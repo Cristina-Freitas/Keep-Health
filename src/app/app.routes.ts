@@ -9,6 +9,7 @@ import { ProfileComponent } from './pages/profile/profile.component';
 import { HeaderComponent } from './shared/components/header/header.component';
 import { DietDetailComponent } from './pages/diet/diet-detail/diet-detail.component';
 import { authGuard } from './shared/guards/auth.guard';
+import { DietChildGuard } from './shared/guards/diet-child.guard';
 
 export const routes: Routes = [
     {
@@ -56,9 +57,10 @@ export const routes: Routes = [
     
     {
         path: 'dietas',
+        component: DietComponent,
+        canActivateChild: [DietChildGuard],
         children:[
-            { path: '', component: DietComponent},
-            { path: ':alimento', component: DietDetailComponent},
+            { path: '', redirectTo: 'detalhes', pathMatch: 'full' },
             { path: 'detalhes/:id', component: DietDetailComponent}
         ]
     },
