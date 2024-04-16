@@ -59,10 +59,10 @@ export const routes: Routes = [
         path: 'dietas',
         component: DietComponent,
         canActivateChild: [DietChildGuard],
-        children:[
-            { path: '', redirectTo: 'detalhes', pathMatch: 'full' },
-            { path: 'detalhes/:id', component: DietDetailComponent}
-        ]
+            loadChildren: 
+            () => import('./pages/diet/diet.module')
+            .then(m => m.DietModule)
+        
     },
 
     {
