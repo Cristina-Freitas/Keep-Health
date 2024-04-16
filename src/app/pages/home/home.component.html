@@ -75,3 +75,39 @@
   </p-dialog>
 </div>
 
+
+<div class="myList">
+  <div *ngFor="let atividade of listaDeTreinos" (click)="atividade(atividade)">
+      <div class="card-atividade">
+          <div class="card-header">
+              <h3 class="card-date">{{atividade.date| date}}</h3>
+              <img src="../../../assets/img/logo1.png" width="50px">
+          </div>
+
+          <div class="card-img">
+              <img *ngIf="atividade.type == 'Caminhada'" [src]="tiposDeAtividades[0].image" [alt]="atividade.type" width="400px" height="400px">
+              <img *ngIf="atividade.type == 'Corrida'" [src]="tiposDeAtividades[1].image" [alt]="atividade.type" width="400px" height="400px">
+              <img *ngIf="atividade.type == 'Natação'" [src]="tiposDeAtividades[2].image" [alt]="atividade.type" width="400px" height="400px">
+              <img *ngIf="atividade.type == 'Bicicleta'" [src]="tiposDeAtividades[3].image" [alt]="atividade.type" width="400px" height="400px">
+              <img *ngIf="atividade.type == 'Dança'" [src]="tiposDeAtividades[4].image" [alt]="atividade.type" width="400px" height="400px">
+              <img *ngIf="atividade.type == 'Musculação'" [src]="tiposDeAtividades[5].image" [alt]="atividade.type" width="400px" height="400px">
+              <img *ngIf="atividade.type == 'Crossfit'" [src]="tiposDeAtividades[6].image" [alt]="atividade.type" width="400px" height="400px">
+              
+
+          </div>
+
+
+          <span class="card-description">{{atividade.title}}</span>
+          <span *ngIf="atividade.distance" class="card-description">Distância: {{atividade.distance}} m</span>
+          <span *ngIf="atividade.time" class="card-description">Tempo: {{atividade.time}}</span>
+          <div class="card-type"> {{atividade.type}} </div>
+
+      </div>
+  </div>
+
+
+
+</div>
+
+
+

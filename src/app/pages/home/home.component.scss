@@ -7,6 +7,16 @@
   margin-top: 2em;
   margin-left: 30em;
   width: calc(90% - 200px)
+
+}
+
+.myList {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-top: 2em;
+  margin-left: 30em;
+  width: calc(90% - 300px)
 }
 @media (max-width: 767px) and (max-width: 1023px){
   .home-container {

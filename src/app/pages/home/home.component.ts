@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterLink } from '@angular/router';
 import { LoginComponent } from '../login/login.component';
@@ -6,6 +6,7 @@ import { SharedModule } from '../../shared/shared.module';
 import { DialogModule } from 'primeng/dialog';
 import { ButtonModule } from 'primeng/button';
 import { FormControl, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
+import { provideAnimations, provideNoopAnimations } from '@angular/platform-browser/animations';
 
 @Component({
   selector: 'app-home',
@@ -20,8 +21,9 @@ import { FormControl, FormGroup, FormsModule, ReactiveFormsModule, Validators } 
             FormsModule,
             ],
   templateUrl: './home.component.html',
-  styleUrl: './home.component.scss'
-
+  styleUrl: './home.component.scss',
+  providers: [provideAnimations(), 
+              provideNoopAnimations()]
 })
 export class HomeComponent {
 
@@ -43,13 +45,13 @@ export class HomeComponent {
   });
 
   tiposDeAtividades = [
-    {name: "Caminhada"},
-    {name: "Corrida"},
-    {name: "Natação"},
-    {name: "Bicicleta"},
-    {name: "Dança"},
-    {name: "Musculação"},
-    {name: "Crossfit"}
+    {name: "Caminhada", image:"../../assets/img/caminhada.jpg"},
+    {name: "Corrida", image:"../../assets/img/corrida.png"},
+    {name: "Natação", image:"../../assets/img/natacao.png"},
+    {name: "Bicicleta", image:"../../assets/img/bike.png"},
+    {name: "Dança", image:"../../assets/img/danca.png"},
+    {name: "Musculação", image:"../../assets/img/musculacao.png"},
+    {name: "Crossfit", image:"../../assets/img/crossfit.png"},
   ];
 
   editarAtividade: any = null;
@@ -75,7 +77,10 @@ export class HomeComponent {
         localStorage.setItem("Atividades", JSON.stringify(treinos));
       } else {
         // Adicionar novo exercício:
-      this.addAtividade(this.novaAtividade.value.title, this.novaAtividade.value.type, this.novaAtividade.value.date, distance, this.novaAtividade.value.time);
+      this.addAtividade(this.novaAtividade.value.title, 
+                        this.novaAtividade.value.type, 
+                        this.novaAtividade.value.date, distance, 
+                        this.novaAtividade.value.time);
       this.novaAtividade.reset();
       }
       this.visible = false;
