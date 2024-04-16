@@ -203,6 +203,7 @@ export class AppComponent implements OnInit {
         sugar_g: 96.5
       }
     ];
+    
     localStorage.setItem('alimentos', JSON.stringify(listaAlimentos));
   }
 }

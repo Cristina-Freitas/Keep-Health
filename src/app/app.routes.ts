@@ -8,6 +8,7 @@ import { DietComponent } from './pages/diet/diet.component';
 import { ProfileComponent } from './pages/profile/profile.component';
 import { HeaderComponent } from './shared/components/header/header.component';
 import { DietDetailComponent } from './pages/diet/diet-detail/diet-detail.component';
+import { authGuard } from './shared/guards/auth.guard';
 
 export const routes: Routes = [
     {
@@ -23,7 +24,8 @@ export const routes: Routes = [
 
     {
         path: 'home',
-        component: HomeComponent
+        component: HomeComponent,
+        canActivate: [authGuard],
     },
 
     {
@@ -45,6 +47,12 @@ export const routes: Routes = [
         path: 'inicio',
         component: InicioComponent
     },
+
+    {
+        path: 'dietas',
+        component: DietComponent,
+        canActivate: [authGuard]
+    },
     
     {
         path: 'dietas',
@@ -62,7 +70,8 @@ export const routes: Routes = [
 
     {
         path: 'perfil',
-        component: ProfileComponent
+        component: ProfileComponent,
+        canActivate: [authGuard]
     }
     // {
     //     path: '**', redirectTo: ''
